@@ -1,0 +1,136 @@
+COMPARACAO - cidadaoDuplicados.csv x BANCO RESTAURADO
+========================================================================
+Gerado em               : 2026-05-27 23:33:50
+CSV                     : cidadaoDuplicados.csv
+Banco                   : tb_cds_cad_individual
+Universo do banco       : versao atual + ativa + sem recusa
+
+RESUMO
+------------------------------------------------------------------------
+Linhas no CSV do sistema                  : 161
+IDs em codigoIds no CSV                   : 323
+IDs unicos em codigoIds no CSV            : 319
+Registros atuais/ativos no banco          : 39724
+Grupos estritos no banco                  : 384
+CSV bate com grupo estrito por nome+data  : 1
+CSV bate com grupo estrito por CPF/CNS    : 0
+CSV existe no banco, mas nao no grupo     : 95
+CSV sem match exato nome+data no banco    : 65
+Grupos do banco presentes no CSV          : 1
+Grupos do banco ausentes no CSV           : 383
+
+LEITURA
+------------------------------------------------------------------------
+O CSV do sistema aparenta usar um criterio diferente do relatorio estrito.
+Ele agrupa casos com variacao de nome/sobrenome e usa IDs que nao batem
+diretamente com co_seq_cds_cad_individual. Por isso a comparacao principal
+foi feita por nome normalizado, data de nascimento, CPF e CNS.
+
+AMOSTRA - CSV QUE EXISTE NO BANCO MAS NAO CAIU NO GRUPO ESTRITO
+------------------------------------------------------------------------
+LUELY HELOISA LOPES RODRIGUES | nasc 2001-01-10 | linhas atuais no banco: 1 | ids CSV: 172307;210763
+MARIA SILVA BARCELOS TRINDADE | nasc 1952-11-30 | linhas atuais no banco: 1 | ids CSV: 172686;204097
+ÁTILA CÁSSIO DA SILVA PEREIRA | nasc 1982-12-25 | linhas atuais no banco: 1 | ids CSV: 207961;173031
+NEIDE MARIA MARIANO | nasc 1983-09-19 | linhas atuais no banco: 1 | ids CSV: 173172;191681
+ADRIANE DIAS OLIVEIRA | nasc 1975-12-12 | linhas atuais no banco: 1 | ids CSV: 173600;186258
+LUCAS AZEVEDO SILVA | nasc 2003-07-28 | linhas atuais no banco: 2 | ids CSV: 173678;213223
+Maria Cristina Lamounier | nasc 1971-03-09 | linhas atuais no banco: 1 | ids CSV: 173791;211459
+EUSTAQUIO ALVES DE OLIVEIRA | nasc 1947-01-05 | linhas atuais no banco: 1 | ids CSV: 173852;207346
+FERNANDO JOVENTINO DA COSTA | nasc 1990-03-10 | linhas atuais no banco: 1 | ids CSV: 207586;174049
+Rosemere Cardoso de Oliveira Noronha | nasc 1973-08-21 | linhas atuais no banco: 1 | ids CSV: 174084;213702
+AMANDA LETÍCIA DA SILVA FAGUNDES | nasc 1998-05-25 | linhas atuais no banco: 1 | ids CSV: 210315;174277
+PEDRO ANTÔNIO GONÇALVES | nasc 1996-12-13 | linhas atuais no banco: 1 | ids CSV: 174369;213089
+MARIA DAS GRAÇAS ALVES DA SILVA | nasc 1950-05-01 | linhas atuais no banco: 1 | ids CSV: 174397;211880
+CAMILA NATIELE LOURENÇO DA SILVA | nasc 1988-03-18 | linhas atuais no banco: 1 | ids CSV: 174507;205931
+VALERIA APARECIDA GONCALVES | nasc 1971-06-28 | linhas atuais no banco: 1 | ids CSV: 174580;214403
+Julia Victoria Gomes Silva | nasc 2017-04-24 | linhas atuais no banco: 1 | ids CSV: 209849;174610
+OSCAR MANOEL APARECIDO BDA SILVA | nasc 2000-02-01 | linhas atuais no banco: 1 | ids CSV: 174909;212868
+Celia Alvares Pereira | nasc 1958-04-25 | linhas atuais no banco: 1 | ids CSV: 206143;174954
+THAYLA GABRIELE RIBEIRO ALMEIDA | nasc 2013-03-05 | linhas atuais no banco: 1 | ids CSV: 185075;175162
+Ana Cristina Silva da Costa | nasc 2007-05-22 | linhas atuais no banco: 1 | ids CSV: 205105;175268
+ESTELLA MACHADO GONTIJO | nasc 2011-06-21 | linhas atuais no banco: 1 | ids CSV: 175468;214070
+JOSE ANTONIO LUIS DE SOUSA | nasc 1954-02-25 | linhas atuais no banco: 1 | ids CSV: 175616;209619
+Alisson Antonio Arruda | nasc 1979-05-21 | linhas atuais no banco: 1 | ids CSV: 175648;204936
+BERNARDO FERREIRA DE ABREU | nasc 2005-05-30 | linhas atuais no banco: 1 | ids CSV: 175798;177755
+BERNARDO FERREIRA DE ABREU | nasc 2005-05-30 | linhas atuais no banco: 1 | ids CSV: 175798;177755
+Kauan Gabriel Amaral Oliveira | nasc 2004-02-17 | linhas atuais no banco: 1 | ids CSV: 175915;210011
+Bianca Barbara Doracy da Silva Boaventura | nasc 2007-07-02 | linhas atuais no banco: 1 | ids CSV: 205776;176117
+Hadassa de Oliveira | nasc 2014-12-26 | linhas atuais no banco: 3 | ids CSV: 208213;176139
+JOSE CLAUDIO ASSUNÇAO | nasc 1966-11-05 | linhas atuais no banco: 1 | ids CSV: 176644;209404
+Maria Helena Lamounier | nasc 1959-05-28 | linhas atuais no banco: 1 | ids CSV: 211787;176675
+
+AMOSTRA - CSV SEM MATCH EXATO NO BANCO, COM MELHOR APROXIMACAO
+------------------------------------------------------------------------
+JOSUE LUCAS BORGES LAGE FERNANDES | nasc 1996-09-13 -> CAMILA APARECIDA DA SILVA | score 0.28 | id banco 292360
+NATANIELLY LIMA DA CUNHA | nasc 2003-05-30 -> NATANIELLY LIMA FERREIRA | score 0.71 | id banco 388518
+SILVANA RODRIGUES DA SILVA | nasc 2000-10-23 -> TAYLOR DOMINICK RODRIGUES DA SILVA | score 0.70 | id banco 377886
+GILIARDO ALVES BATISTA | nasc 1989-09-30 -> TIAGO WILLIAN LUCAS PEREIRA | score 0.41 | id banco 376890
+JOSE OSVALDO DOS SANTOS | nasc 1972-04-29 -> JOSE OSWALDO DOS SANTOS | score 0.96 | id banco 387983
+Samuel Sousa Santos | nasc 2020-03-10 -> CLARICE ALVARES DA SILVA | score 0.28 | id banco 90456
+OSVALDO ALVES PINTO | nasc 1979-05-05 -> OSVALDO ALVES PINTO FILHO | score 0.86 | id banco 388543
+OSVALDO ALVES PINTO | nasc 1979-05-05 -> OSVALDO ALVES PINTO FILHO | score 0.86 | id banco 388543
+LETICIA EMANUELE APARECIDA FARIA GOMES | nasc 2000-12-04 -> LETICIA EMANUELLE APARECIDA FARIA GOMES | score 0.99 | id banco 176507
+LUÍS VICENTE ALVES DE JESUS | nasc 1994-03-31 -> TEREZA CRISTINA ALVES DE JESUS | score 0.67 | id banco 104296
+JOSE ANTONIO DA SILVA | nasc 1964-08-12 -> MAURO LUCIO DA SILVA | score 0.63 | id banco 384724
+ANA KAROLINA DANILA DE OLIVEIRA | nasc 2007-06-09 -> sem candidato
+ANTONIO DIAS DE OLIVEIRA | nasc 1951-10-06 -> sem candidato
+MATEUS DE CASTRO TEIXEIRA CARVALHO | nasc 2010-04-29 -> MATEUS DE CASTRO TEIXEIRA CARVALHO GOMES | score 0.92 | id banco 388461
+JESSICA RODRIGUES DOS SANTOS | nasc 2000-01-24 -> DANIEL MARIANO DOS SANTOS | score 0.57 | id banco 387499
+Maria Das Gracas Goncalves de Melo | nasc 1949-02-03 -> MARIA GRAÇAS GONÇALVES MELO | score 0.89 | id banco 108728
+Igor Amorim de Assis | nasc 2000-11-10 -> JENNYFER MORAIS DA SILVA | score 0.50 | id banco 205999
+EMILIA RAMOS DE LACERDA | nasc 1980-08-20 -> JUNIA RAMOS DE ALMEIDA | score 0.71 | id banco 72963
+MARTA MARIA PIRES PEREIRA | nasc 1961-11-27 -> MARIA APARECIDA VALADARES | score 0.44 | id banco 293994
+MARIANA BORGES | nasc 2021-01-14 -> MARIANA SILVA BORGES | score 0.82 | id banco 388394
+Lusia Maria da Silva | nasc 1956-11-15 -> LUSIA MARIA DE JESUS | score 0.75 | id banco 88141
+Rhobysson Leandro Alves de Jesus | nasc 1977-12-09 -> RHOBYSSON LEANDRO DE JESUS | score 0.90 | id banco 96954
+IRANI ALVES PEREIRA | nasc 1942-11-09 -> EMILIA GONÇALVES RIOS | score 0.48 | id banco 54777
+GRACIELA APARECIDA CARVALHO | nasc 1979-02-16 -> GRACIELA APARECIDA DE CARVALHO OLIVEIRA | score 0.82 | id banco 387754
+David Nicollas Santos da Silva | nasc 2014-07-09 -> DAVID NICOLLAS SANTOSDA SILVA | score 0.98 | id banco 103776
+MARCOS VINICIUS PIMENTA | nasc 2001-10-30 -> MARCOS VINICIUS PIMENTA PEREIRA | score 0.85 | id banco 388237
+MARIA AUXILIADORA FRANÇA | nasc 1965-10-20 -> sem candidato
+GERALDO PACIFICO DE SOUSA | nasc 1966-01-09 -> IVALERIA RITA DE SOUSA | score 0.60 | id banco 147162
+NICOLE EMANUELE PEREIRA DE SOUSA | nasc 2018-07-03 -> NICOLE EMANUELE PEREIRA SANTOS | score 0.84 | id banco 388541
+Maria Lucas da Cunha | nasc 1955-07-19 -> sem candidato
+
+AMOSTRA - GRUPOS ESTRITOS DO BANCO AUSENTES NO CSV DO SISTEMA
+------------------------------------------------------------------------
+NOME_NASC_MAE | LINDALVA  ALVES DOS SANTOS | nasc 1958-03-02 | mae DEJANIRA DA SILVA AGUIAR | registros 2
+NOME_NASC_MAE | TALITA LORRAINE BORGES XAVIER | nasc 1995-10-27 | mae VANUSA PEREIRA BORGES | registros 2
+NOME_NASC_MAE | MERCIA MARIA DA SILVA | nasc 1968-04-16 | mae GERMANA ALVES DA SILVA | registros 2
+NOME_NASC_MAE | JAILSON CRISTIANO DA CRUZ | nasc 1974-09-04 | mae MARIA DA GLORIA DA SILVA CRUZ | registros 2
+NOME_NASC_MAE | THALYSON FILIPE LINO | nasc 2001-09-18 | mae MIRIAN FLAVIO PEDROSA LINO | registros 2
+NOME_NASC_MAE | MELYSSA VITORIA DE SOUSA SILVA | nasc 2016-03-14 | mae FABIANA BATISTA DE SOUSA | registros 2
+NOME_NASC_MAE | FERNANDO AMORIM ALMEIDA | nasc 1984-06-23 | mae MARIA HELENA AMORIM ALMEIDA | registros 2
+NOME_NASC_MAE | DANIEL COSME DE OLIVEIRA SILVA | nasc 1993-01-15 | mae REGINA APARECIDA DE OLIVEIRA | registros 2
+NOME_NASC_MAE | GERALDA FLORINDA DE JESUS | nasc 1941-05-04 | mae MARIA FLORINDA DE JESUS | registros 2
+NOME_NASC_MAE | JOAQUIM BATISTA PEREIRA | nasc 1942-05-16 | mae JUVENTINA MARIA DE JESUS | registros 2
+NOME_NASC_MAE | GILMAR CEZAR DE NORONHA | nasc 1974-11-09 | mae CEREZITA CEZAR DE NORONHA | registros 2
+NOME_NASC_MAE | JOSE EDUARDO DA SILVA JUNIOR | nasc 2001-11-16 | mae IVONILDE APARECIDA DA SILVA | registros 2
+NOME_NASC_MAE | ARTHUR LUCAS PEREIRA | nasc 2013-01-22 | mae SUELI DA SILVA SANTOS | registros 2
+NOME_NASC_MAE | PRISCILA APARECIDA DA SILVA SOUSA | nasc 1997-06-25 | mae CACILDA HENRIQUE DA SILVA | registros 2
+NOME_NASC_MAE | REJANE CONCEICAO BARBOSA | nasc 1976-05-22 | mae CONCEIÇÃO TOMÉ BARBOSA | registros 2
+NOME_NASC_MAE | ENZO GABRIEL PEREIRA NOVAIS | nasc 2017-07-20 | mae EDILANE PEREIRA | registros 2
+NOME_NASC_MAE | LANAY OLIVEIRA ALVES DA MATA | nasc 2015-01-28 | mae MARINA FABIANE DE OLIVEIRA | registros 2
+NOME_NASC_MAE | D'ALESSANDRO SOUSA LUCAS | nasc 2016-05-17 | mae REJANE DE OLIVEIRA SOUSA LUCAS | registros 2
+NOME_NASC_MAE | VANDERLEI GOMES PEREIRA | nasc 1955-01-21 | mae MARIA FRANCISCA DE OLIVEIRA | registros 2
+NOME_NASC_MAE | SOLENE APARECIDA NUNES MOREIRA | nasc 1985-10-03 | mae MARIA APARECIDA DE JESUS | registros 2
+NOME_NASC_MAE | BENICIO SILVA FERREIRA | nasc 2020-06-15 | mae LETICIA DE FATIMA DA SILVA | registros 2
+NOME_NASC_MAE | YASMIN STEPHANY DE SOUSA SILVA | nasc 2003-08-26 | mae CLAUDIA JANAINA DE SOUSA SILVA | registros 2
+NOME_NASC_MAE | MATEUS EMANUEL SILVA MARTINS | nasc 2016-10-26 | mae PALOMA CAROLINE MARTINS CONCEICAO | registros 2
+NOME_NASC_MAE | FERNANDA NATIELE ROSA DA SILVA | nasc 1987-06-12 | mae MARIA APARECIDA ROSA DE MELO | registros 2
+NOME_NASC_MAE | KEMILLE GABRIELLY BARBOSA DA SILVA | nasc 2007-08-15 | mae HELOISA MARIA FERREIRA DA SILVA BARBOSA | registros 2
+NOME_NASC_MAE | RAFAEL LUCAS DA SILVA COSTA | nasc 2017-12-29 | mae SARA JANE DA SILVA | registros 2
+NOME_NASC_MAE | DIVINA MARIA DE FATIMA PEREIRA | nasc 1957-02-07 | mae ROSA RODRIGUES DA SILVA | registros 2
+NOME_NASC_MAE | LUIS OTAVIO PEREIRA DE SOUZA GUIMARAES | nasc 2014-10-15 | mae RENATA DE SOUSA GUIMARAES | registros 2
+NOME_NASC_MAE | MARIA LUCIA DE OLIVEIRA SOUZA | nasc 1956-05-26 | mae DIMISSIANA CORREA DE OLIVEIRA | registros 2
+NOME_NASC_MAE | DAIENE DE OLIVEIRA BARBOSA | nasc 1990-04-17 | mae LILIAN DE OLIVEIRA CAMPOS BARBOSA | registros 2
+NOME_NASC_MAE | JOSÉ FERREIRA DO AMARAL | nasc 1954-12-08 | mae ALMINDA PEREIRA BUENO | registros 2
+NOME_NASC_MAE | VITOR GABRIEL ALVES DE SOUSA | nasc 2009-09-09 | mae RONILDA ALVES DA COSTA | registros 2
+NOME_NASC_MAE | GILSON RONALDO DA SILVA | nasc 1976-07-08 | mae MARIA LAVINIA ABRANTES | registros 2
+NOME_NASC_MAE | VERENICE PINTO DO COUTO OLIVEIRA | nasc 1985-06-12 | mae OLIMPIA MARIA DO COUTO | registros 2
+NOME_NASC_MAE | ADELMO CARDOSO | nasc 1968-06-16 | mae MARIA RITA DA SILLVA | registros 2
+NOME_NASC_MAE | FRANCISCO DE ASSIS DANTAS | nasc 1957-10-23 | mae MARIA FRASSINETE DANTAS | registros 2
+NOME_NASC_MAE | SIMONE DANTAS SILVA | nasc 1962-03-26 | mae ALBERTINA CARVALHO DANTAS | registros 2
+NOME_NASC_MAE | BIANCA NATIELE DA SILVA | nasc 1993-02-16 | mae GERALDA APARECIDA LEITE DA SILVA | registros 2
+NOME_NASC_MAE | RAONY RATES ALEIXO | nasc 2000-01-01 | mae GERALDA ALEXSANDRA RATES | registros 2
+NOME_NASC_MAE | RAFAEL DE FREITAS RODRIGUES | nasc 1993-07-02 | mae CLAUDIA DE FREITAS RODRIGUES | registros 2
